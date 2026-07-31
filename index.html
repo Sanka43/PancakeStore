@@ -6,7 +6,8 @@
   <meta name="description" content="PancakeStore — a jailed App Store downgrader for iOS 16.4 and later. No jailbreak. No exploits." />
   <meta name="theme-color" content="#140e0a" />
   <title>PancakeStore — iOS App Downgrader</title>
-  <link rel="icon" href="assets/icon.png" type="image/png" />
+  <link rel="icon" href="assets/icon.png?v=2" type="image/png" />
+  <link rel="preload" as="image" href="assets/app-screenshot.png?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -121,7 +122,7 @@
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <img class="hero-icon" src="assets/icon.png" alt="" width="120" height="120" />
+          <img class="hero-icon" src="assets/icon.png?v=2" alt="" width="120" height="120" fetchpriority="high" decoding="async" />
           <p class="brand">PancakeStore</p>
           <h1>Downgrade App Store apps without a jailbreak.</h1>
           <p class="lede">A jailed, exploit-less downgrader for iOS 16.4 and later — forked from MuffinStore Jailed.</p>
@@ -129,7 +130,7 @@
             <a class="btn btn-primary" id="download" href="#download-section">Download Now</a>
           </div>
         </div>
-        <img class="hero-shot" src="assets/app-screenshot.png?v=2" alt="PancakeStore running on an iPhone, showing a successful app downgrade" width="460" height="950" />
+        <img class="hero-shot" src="assets/app-screenshot.png?v=2" alt="PancakeStore running on an iPhone, showing a successful app downgrade" width="460" height="950" decoding="async" />
       </div>
     </section>
 
@@ -316,7 +317,7 @@
             <p class="note">Warning: Downgrading apps may cause data loss or compatibility issues. Always back up your data first.</p>
           </div>
           <aside class="release-aside">
-            <img class="release-icon" src="assets/icon.png" alt="" width="72" height="72" />
+            <img class="release-icon" src="assets/icon.png?v=2" alt="" width="72" height="72" loading="lazy" decoding="async" />
             <a class="btn btn-primary btn-block" href="https://github.com/jailbreakdotparty/PancakeStore/releases/download/1.3.1/PancakeStore_v1.3.1.ipa">Download IPA v1.3.1</a>
             <ul class="release-meta">
               <li><span>Format</span><strong>.ipa</strong></li>
