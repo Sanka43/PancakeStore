@@ -4,12 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="PancakeStore — a jailed App Store downgrader for iOS 16.4 and later. No jailbreak. No exploits." />
+  <meta name="theme-color" content="#140e0a" />
   <title>PancakeStore — iOS App Downgrader</title>
   <link rel="icon" href="assets/icon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is PancakeStore iOS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PancakeStore iOS is an app downgrader that lets you install older versions of App Store apps on iPhone and iPad without jailbreak or exploits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does PancakeStore require jailbreak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PancakeStore works on stock iOS and does not require jailbreak, TrollStore, or kernel exploits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which iOS versions support PancakeStore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PancakeStore supports iOS 16.4 and later on compatible iPhone and iPad devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download PancakeStore APK on iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PancakeStore APK is an Android format. iOS users should install the PancakeStore IPA version instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does PancakeStore downgrade apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PancakeStore installs older App Store versions available from Apple servers. The app must be previously downloaded with the same Apple ID."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I install PancakeStore with SideStore or Scarlet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can install PancakeStore using sideloading tools like SideStore, Scarlet, AltStore, or similar IPA installers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PancakeStore related to WaffleStore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PancakeStore is based on the same idea as MuffinStore Jailed. It is not the same as WaffleStore, but both focus on App Store app management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can PancakeStore install Minecraft iOS older versions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if an older Minecraft iOS version is still available on Apple's servers and linked to your Apple ID, PancakeStore may allow installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does PancakeStore need TrollStore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PancakeStore works without TrollStore and can be installed through normal sideloading methods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does PancakeStore login fail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apple authentication can change at any time. Update PancakeStore to the latest version and make sure you use the correct Apple ID with 2FA enabled."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -21,8 +110,9 @@
       <a href="#features">Features</a>
       <a href="#install">Install</a>
       <a href="#usage">Usage</a>
+      <a href="#faq">FAQ</a>
       <a href="#troubleshoot">Help</a>
-      <a href="#download" class="nav-cta">Download</a>
+      <a href="#download-section" class="nav-cta">Download</a>
     </nav>
   </header>
 
@@ -30,171 +120,478 @@
     <section class="hero">
       <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="hero-inner">
-        <img class="hero-icon" src="assets/icon.png" alt="" width="120" height="120" />
-        <p class="brand">PancakeStore</p>
-        <h1>Downgrade App Store apps without a jailbreak.</h1>
-        <p class="lede">A jailed, exploit-less downgrader for iOS 16.4 and later — forked from MuffinStore Jailed.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" id="download" href="https://github.com/jailbreakdotparty/PancakeStore/releases/download/1.3.1/PancakeStore_v1.3.1.ipa">Download IPA v1.3.1</a>
-          <a class="btn btn-ghost" href="https://github.com/jailbreakdotparty/PancakeStore" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <div class="hero-copy">
+          <img class="hero-icon" src="assets/icon.png" alt="" width="120" height="120" />
+          <p class="brand">PancakeStore</p>
+          <h1>Downgrade App Store apps without a jailbreak.</h1>
+          <p class="lede">A jailed, exploit-less downgrader for iOS 16.4 and later — forked from MuffinStore Jailed.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="download" href="#download-section">Download IPA v1.3.1</a>
+          </div>
         </div>
+        <img class="hero-shot" src="assets/app-screenshot.png?v=2" alt="PancakeStore running on an iPhone, showing a successful app downgrade" width="460" height="950" />
       </div>
     </section>
 
     <section class="section reveal" id="about">
-      <div class="wrap narrow">
-        <h2>What it does</h2>
-        <p class="section-lede">PancakeStore lets you reinstall older versions of apps you already own on the App Store. It runs jailed — no kernel exploits, no TrollStore requirement, no jailbreak.</p>
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="section-head">
+            <p class="eyebrow">About</p>
+            <h2>What is PancakeStore?</h2>
+          </div>
+          <div class="prose">
+            <p>PancakeStore is a free iOS app downgrader that allows iPhone and iPad users to install older versions of App Store apps without a jailbreak. Designed for iOS 16.4 and later, PancakeStore works in a jailed environment and does not require kernel exploits or TrollStore.</p>
+            <p>Based on MuffinStore Jailed, PancakeStore provides a cleaner interface, improved performance, and a simple way to restore previous app versions when updates introduce bugs, remove features, or cause compatibility issues.</p>
+            <p>With PancakeStore, users can easily manage App Store app versions directly on their devices while enjoying a beginner-friendly downgrade experience.</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <strong>iOS 16.4+</strong>
+            <span>Supported firmware</span>
+          </div>
+          <div class="stat">
+            <strong>No jailbreak</strong>
+            <span>Fully jailed workflow</span>
+          </div>
+          <div class="stat">
+            <strong>v1.3.1</strong>
+            <span>Latest release</span>
+          </div>
+          <div class="stat">
+            <strong>Free</strong>
+            <span>Open source on GitHub</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section section-alt reveal" id="features">
       <div class="wrap">
-        <h2>Features</h2>
-        <p class="section-lede">Built for day-to-day downgrading — share from the App Store, export IPAs, and keep the cache clean.</p>
-        <ul class="feature-list">
-          <li>
-            <strong>No jailbreak</strong>
-            <span>Works on stock iOS 16.4+ via sideloading.</span>
+        <div class="section-head center">
+          <p class="eyebrow">Features</p>
+          <h2>Everything you need to downgrade</h2>
+          <p class="section-lede">Built for day-to-day downgrading — share from the App Store, export IPAs, and keep the cache clean.</p>
+        </div>
+        <ul class="feature-grid">
+          <li class="feature-card">
+            <span class="feature-num">01</span>
+            <strong>No jailbreak required</strong>
+            <span>Works on stock iOS via sideloading — no jailbreak needed.</span>
           </li>
-          <li>
-            <strong>No exploits</strong>
+          <li class="feature-card">
+            <span class="feature-num">02</span>
+            <strong>Supports iOS 16.4 and later</strong>
+            <span>Compatible with iPhone and iPad on supported firmware.</span>
+          </li>
+          <li class="feature-card">
+            <span class="feature-num">03</span>
+            <strong>No exploits or CoreTrust bugs</strong>
             <span>Uses Apple authentication and App Store version delivery.</span>
           </li>
-          <li>
-            <strong>Share Extension</strong>
+          <li class="feature-card">
+            <span class="feature-num">04</span>
+            <strong>Downgrade purchased apps</strong>
+            <span>Reinstall older versions of App Store apps you already own.</span>
+          </li>
+          <li class="feature-card">
+            <span class="feature-num">05</span>
+            <strong>Share App Store links</strong>
             <span>Send an App Store link straight into PancakeStore.</span>
           </li>
-          <li>
-            <strong>Export IPA</strong>
+          <li class="feature-card">
+            <span class="feature-num">06</span>
+            <strong>Export downloaded IPA files</strong>
             <span>Save the downgraded package after install for archival.</span>
           </li>
-          <li>
-            <strong>iPad-ready UI</strong>
+          <li class="feature-card">
+            <span class="feature-num">07</span>
+            <strong>iPad-optimized interface</strong>
             <span>Proper layout for larger screens, plus a settings page.</span>
           </li>
-          <li>
-            <strong>Localizations</strong>
+          <li class="feature-card">
+            <span class="feature-num">08</span>
+            <strong>Supports multiple languages</strong>
             <span>Spanish, Arabic, Dutch, Vietnamese, Italian, Swedish, Romanian, Norwegian, and more.</span>
           </li>
-          <li>
-            <strong>Auto-clean caches</strong>
+          <li class="feature-card">
+            <span class="feature-num">09</span>
+            <strong>Auto-clears download cache</strong>
             <span>Download and server caches clear themselves so storage stays tidy.</span>
+          </li>
+          <li class="feature-card">
+            <span class="feature-num">10</span>
+            <strong>Clean, beginner-friendly UI</strong>
+            <span>Simple interface designed for an easy downgrade experience.</span>
           </li>
         </ul>
       </div>
     </section>
 
     <section class="section reveal" id="requirements">
-      <div class="wrap narrow">
-        <h2>Requirements</h2>
-        <p class="section-lede">Meet these before you install.</p>
-        <ol class="steps">
-          <li>Device running <strong>iOS 16.4 or later</strong>.</li>
-          <li>An <strong>Apple ID with 2FA</strong> — ideally the one signed into the device.</li>
-          <li>A <strong>sideloading method</strong> of your choice (TrollStore, LiveContainer, AltStore, Sideloadly, and similar are supported).</li>
-        </ol>
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Requirements</p>
+          <h2>Before you install</h2>
+          <p class="section-lede">Four things you'll need before installing PancakeStore.</p>
+        </div>
+        <div class="req-grid">
+          <div class="req-card">
+            <strong>Compatible device</strong>
+            <span>iPhone or iPad running <em>iOS 16.4 or later</em>.</span>
+          </div>
+          <div class="req-card">
+            <strong>Apple ID with 2FA</strong>
+            <span>An Apple ID with <em>Two-Factor Authentication</em> enabled.</span>
+          </div>
+          <div class="req-card">
+            <strong>App ownership</strong>
+            <span>The app must already be <em>associated with your Apple ID</em>.</span>
+          </div>
+          <div class="req-card">
+            <strong>Sideloading tool</strong>
+            <span>SideStore, AltStore, Scarlet, LiveContainer, PlumeImpactor, Sideloadly, or TrollStore (optional).</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-alt reveal" id="install">
+    <section class="section section-alt reveal" id="download-section">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Download</p>
+          <h2>Get PancakeStore</h2>
+          <p class="section-lede">Download the latest PancakeStore IPA and install older versions of App Store apps on your iPhone or iPad — straight from Apple's servers.</p>
+        </div>
+        <div class="release-panel">
+          <div class="release-main">
+            <div class="release-top">
+              <span class="version-badge">v1.3.1</span>
+              <span class="release-date">Released 4 days ago</span>
+            </div>
+            <h3>PancakeStore v1.3.1 Update</h3>
+            <p>This update improves localization support and includes minor backend improvements.</p>
+            <div class="release-translators">
+              <h4>Translators</h4>
+              <ul class="translator-grid">
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">I</span>
+                  <span class="tr-info"><strong>Isacucho</strong><span>Spanish</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">G</span>
+                  <span class="tr-info"><strong>gerda</strong><span>Russian</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">R</span>
+                  <span class="tr-info"><strong>rooootdev</strong><span>German</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">T</span>
+                  <span class="tr-info"><strong>TrollStoreX</strong><span>Chinese (Simplified)</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">N</span>
+                  <span class="tr-info"><strong>neonmodder123</strong><span>Arabic</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">J</span>
+                  <span class="tr-info"><strong>Jurre</strong><span>Dutch</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">M</span>
+                  <span class="tr-info"><strong>MineTurtlee</strong><span>Vietnamese</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">N</span>
+                  <span class="tr-info"><strong>nxtcoreee3</strong><span>Swedish, Romanian, Norwegian</span></span>
+                </li>
+                <li>
+                  <span class="tr-avatar" aria-hidden="true">F</span>
+                  <span class="tr-info"><strong>fil</strong><span>Italian</span></span>
+                </li>
+              </ul>
+            </div>
+            <p class="note">Warning: Downgrading apps may cause data loss or compatibility issues. Always back up your data first.</p>
+          </div>
+          <aside class="release-aside">
+            <img class="release-icon" src="assets/icon.png" alt="" width="72" height="72" />
+            <a class="btn btn-primary btn-block" href="https://github.com/jailbreakdotparty/PancakeStore/releases/download/1.3.1/PancakeStore_v1.3.1.ipa">Download IPA v1.3.1</a>
+            <ul class="release-meta">
+              <li><span>Format</span><strong>.ipa</strong></li>
+              <li><span>Requires</span><strong>iOS 16.4+</strong></li>
+              <li><span>Source</span><strong>GitHub Releases</strong></li>
+            </ul>
+            <div class="release-notes">
+              <h4>What's new</h4>
+              <p><strong>New Languages Added:</strong> Spanish, Arabic, Dutch, Vietnamese, Italian, Swedish, Romanian, and Norwegian.</p>
+              <ul class="changelog">
+                <li>Added Translators section</li>
+                <li>Improved localization</li>
+                <li>Minor backend updates</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="install">
       <div class="wrap narrow">
-        <h2>Install</h2>
-        <p class="section-lede">Sideload the official IPA, then trust the signing identity if your method requires it.</p>
-        <ol class="steps">
-          <li>Download <strong>PancakeStore_v1.3.1.ipa</strong> from the button above or the GitHub Releases page.</li>
-          <li>Install with your preferred sideloading tool.</li>
-          <li>If prompted, trust the developer profile under <em>Settings → General → VPN &amp; Device Management</em>.</li>
-          <li>Open PancakeStore and sign in with your Apple ID when ready to downgrade.</li>
+        <div class="section-head">
+          <p class="eyebrow">Install</p>
+          <h2>How to Install PancakeStore IPA</h2>
+          <p class="section-lede">Installing PancakeStore is simple — seven quick steps.</p>
+        </div>
+        <ol class="steps-flow">
+          <li>
+            <strong>Download the IPA</strong>
+            <span>Grab the latest <em>PancakeStore IPA</em> from the official release.</span>
+          </li>
+          <li>
+            <strong>Open your sideloading tool</strong>
+            <span>Launch SideStore, AltStore, Scarlet, or another IPA installer.</span>
+          </li>
+          <li>
+            <strong>Import the IPA file</strong>
+            <span>Add the downloaded PancakeStore IPA to the tool.</span>
+          </li>
+          <li>
+            <strong>Sign the app</strong>
+            <span>Sign with your Apple ID as your tool requires.</span>
+          </li>
+          <li>
+            <strong>Install PancakeStore</strong>
+            <span>Let the tool push the app to your device.</span>
+          </li>
+          <li>
+            <strong>Trust the developer profile</strong>
+            <span>If required, under <em>Settings → General → VPN &amp; Device Management</em>.</span>
+          </li>
+          <li>
+            <strong>Sign in and go</strong>
+            <span>Open PancakeStore and sign in with the <em>same Apple ID</em> used to download the target app.</span>
+          </li>
         </ol>
         <p class="note">Prefer the official release assets only. Avoid third-party IPA mirrors.</p>
       </div>
     </section>
 
-    <section class="section reveal" id="usage">
+    <section class="section section-alt reveal" id="usage">
       <div class="wrap narrow">
-        <h2>How to use</h2>
-        <p class="section-lede">The target app must satisfy every rule below.</p>
-        <ul class="checklist">
-          <li>Purchased from the App Store with the <strong>same Apple ID</strong> you log in with.</li>
-          <li><strong>Not installed</strong> on the device (offloading counts as removed).</li>
-          <li>Has <strong>valid older versions</strong> available to downgrade to — some apps do not.</li>
-        </ul>
-        <p class="note">Do not ask for support if a specific app cannot be downgraded or crashes on launch. That is outside what maintainers can fix.</p>
+        <div class="section-head">
+          <p class="eyebrow">Usage</p>
+          <h2>How to Downgrade Apps</h2>
+          <p class="section-lede">Using PancakeStore is easy — from sign-in to install in five steps.</p>
+        </div>
+        <ol class="steps-flow">
+          <li>
+            <strong>Open PancakeStore</strong>
+            <span>Launch the app on your iPhone or iPad.</span>
+          </li>
+          <li>
+            <strong>Sign in</strong>
+            <span>Use your <em>Apple ID</em> with 2FA enabled.</span>
+          </li>
+          <li>
+            <strong>Find your app</strong>
+            <span>Search for an app you've <em>previously downloaded</em>.</span>
+          </li>
+          <li>
+            <strong>Pick a version</strong>
+            <span>Choose an available <em>older version</em> from the list.</span>
+          </li>
+          <li>
+            <strong>Install</strong>
+            <span>Confirm and install the selected version.</span>
+          </li>
+        </ol>
+        <p class="note">Older versions are only available if Apple still provides them.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="notes">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Good to know</p>
+          <h2>Important Notes</h2>
+          <p class="section-lede">Keep these in mind before downgrading.</p>
+        </div>
+        <div class="notes-grid">
+          <div class="note-card">
+            <strong>Previously downloaded</strong>
+            <span>The app must have been downloaded before using the same Apple ID.</span>
+          </div>
+          <div class="note-card">
+            <strong>Not currently installed</strong>
+            <span>The app should not already be installed on your device.</span>
+          </div>
+          <div class="note-card">
+            <strong>Availability varies</strong>
+            <span>Some apps may not offer older versions at all.</span>
+          </div>
+          <div class="note-card">
+            <strong>Apple can change things</strong>
+            <span>Authentication may occasionally stop working due to changes on Apple's servers.</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section section-alt reveal" id="troubleshoot">
       <div class="wrap narrow">
-        <h2>Troubleshooting</h2>
-        <dl class="faq">
-          <div>
-            <dt>“Failed to get pod”</dt>
-            <dd>Usually means this Apple ID cannot complete login, or Apple’s servers changed authentication. Updating to the latest PancakeStore may help; opening issues about login will not speed up a fix.</dd>
-          </div>
-          <div>
-            <dt>“Safari can’t open the page”</dt>
-            <dd>Go to Settings → Apps → Safari → Privacy &amp; Security, and disable <em>Not Secure Connection Warning</em>. Also check that VPN or custom DNS is not blocking the flow.</dd>
-          </div>
-          <div>
-            <dt>Login fails randomly</dt>
-            <dd>Apple changes server-side auth often. Stay on the latest release. Auth breakage is expected sometimes and is not something support can rush.</dd>
-          </div>
-        </dl>
+        <div class="section-head">
+          <p class="eyebrow">Help</p>
+          <h2>Troubleshooting</h2>
+          <p class="section-lede">Quick fixes for the most common issues.</p>
+        </div>
+        <div class="accordion">
+          <details>
+            <summary>Login Failed</summary>
+            <p>Update PancakeStore to the latest version and try again.</p>
+          </details>
+          <details>
+            <summary>Safari Can't Open the Page</summary>
+            <p>Disable <em>Not Secure Connection Warning</em> under Safari settings and check your VPN or DNS configuration.</p>
+          </details>
+          <details>
+            <summary>Downgrade Doesn't Work</summary>
+            <p>Some applications simply don't have compatible older versions available.</p>
+          </details>
+        </div>
       </div>
     </section>
 
     <section class="section reveal" id="warnings">
       <div class="wrap narrow">
-        <h2>Warnings</h2>
-        <div class="warning-block">
-          <p><strong>Use at your own risk.</strong> Downgrading can delete or corrupt app data. There is no guarantee that user data will be retained.</p>
-          <p>Authentication may break at any time because of Apple’s backend changes. If login fails, update PancakeStore first — do not open issues solely about login failures.</p>
+        <div class="warning-banner">
+          <div class="warning-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <div class="warning-copy">
+            <h2>Back up before you downgrade</h2>
+            <p><strong>Downgrading apps may remove existing app data or cause compatibility issues.</strong> Always back up important information before installing an older app version.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt reveal" id="credits">
+    <section class="section section-alt reveal" id="faq">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>PancakeStore FAQ</h2>
+          <p class="section-lede">Answers to the questions people ask most.</p>
+        </div>
+        <div class="accordion">
+          <details>
+            <summary>What is PancakeStore iOS?</summary>
+            <p>PancakeStore iOS is an app downgrader that lets you install older versions of App Store apps on iPhone and iPad without jailbreak or exploits.</p>
+          </details>
+          <details>
+            <summary>Does PancakeStore require jailbreak?</summary>
+            <p>No. PancakeStore app works on stock iOS and does not require jailbreak, TrollStore, or kernel exploits.</p>
+          </details>
+          <details>
+            <summary>Which iOS versions support PancakeStore?</summary>
+            <p>PancakeStore supports iOS 16.4 and later on compatible iPhone and iPad devices.</p>
+          </details>
+          <details>
+            <summary>Can I download PancakeStore APK on iPhone?</summary>
+            <p>No. PancakeStore APK is an Android format. iOS users should install the PancakeStore IPA version instead.</p>
+          </details>
+          <details>
+            <summary>How does PancakeStore downgrade apps?</summary>
+            <p>PancakeStore installs older App Store versions available from Apple servers. The app must be previously downloaded with the same Apple ID.</p>
+          </details>
+          <details>
+            <summary>Can I install PancakeStore with SideStore or Scarlet?</summary>
+            <p>Yes. You can install PancakeStore using sideloading tools like SideStore, Scarlet, AltStore, or similar IPA installers.</p>
+          </details>
+          <details>
+            <summary>Is PancakeStore related to WaffleStore?</summary>
+            <p>PancakeStore is based on the same idea as MuffinStore Jailed. It is not the same as WaffleStore, but both focus on App Store app management.</p>
+          </details>
+          <details>
+            <summary>Can PancakeStore install Minecraft iOS older versions?</summary>
+            <p>Yes, if an older Minecraft iOS version is still available on Apple's servers and linked to your Apple ID, PancakeStore may allow installation.</p>
+          </details>
+          <details>
+            <summary>Does PancakeStore need TrollStore?</summary>
+            <p>No. PancakeStore works without TrollStore and can be installed through normal sideloading methods.</p>
+          </details>
+          <details>
+            <summary>Why does PancakeStore login fail?</summary>
+            <p>Apple authentication can change at any time. Update PancakeStore to the latest version and make sure you use the correct Apple ID with 2FA enabled.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="credits">
       <div class="wrap">
-        <h2>Credits</h2>
-        <p class="section-lede">Built on MuffinStore Jailed, maintained by jailbreak.party.</p>
+        <div class="section-head center">
+          <p class="eyebrow">Credits</p>
+          <h2>Made by the community</h2>
+          <p class="section-lede">PancakeStore is based on MuffinStore Jailed.</p>
+        </div>
         <div class="credits-grid">
-          <div>
-            <h3>Core</h3>
-            <ul>
-              <li><a href="https://github.com/mineek" target="_blank" rel="noopener noreferrer">Mineek</a> — original project</li>
-              <li><a href="https://github.com/skadz108" target="_blank" rel="noopener noreferrer">skadz108</a> — maintainer &amp; backend</li>
-              <li><a href="https://github.com/lunginspector" target="_blank" rel="noopener noreferrer">lunginspector</a> — frontend &amp; QoL</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Translators</h3>
-            <ul>
-              <li>Isacucho — Spanish</li>
-              <li>gerda — Russian</li>
-              <li>rooootdev — German</li>
-              <li>TrollStoreX — Chinese (Simplified)</li>
-              <li>neonmodder123 — Arabic</li>
-              <li>Jurre — Dutch</li>
-              <li>MineTurtlee — Vietnamese</li>
-              <li>nxtcoreee3 — Swedish, Romanian, Norwegian</li>
-              <li>fil — Italian</li>
+          <div class="credit-card">
+            <h3>Developers</h3>
+            <ul class="dev-list">
+              <li>
+                <a href="https://github.com/mineek" target="_blank" rel="noopener noreferrer">Mineek</a>
+                <span>Original Project</span>
+              </li>
+              <li>
+                <a href="https://github.com/lunginspector" target="_blank" rel="noopener noreferrer">lunginspector</a>
+                <span>Frontend Development</span>
+              </li>
+              <li>
+                <a href="https://github.com/skadz108" target="_blank" rel="noopener noreferrer">skadz108</a>
+                <span>Backend &amp; Maintenance</span>
+              </li>
             </ul>
           </div>
         </div>
+        <p class="credits-thanks">Special thanks to the translation contributors and the open-source community.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p class="footer-brand">PancakeStore</p>
-      <p class="footer-note">This local page mirrors public project info for convenience. The official site is <a href="https://jailbreak.party/pancakestore" target="_blank" rel="noopener noreferrer">jailbreak.party/pancakestore</a>. Prefer official downloads only.</p>
-      <div class="footer-links">
-        <a href="https://github.com/jailbreakdotparty/PancakeStore" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://jailbreak.party/discord" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="https://jailbreak.party/" target="_blank" rel="noopener noreferrer">jailbreak.party</a>
-        <a href="https://github.com/mineek/MuffinStoreJailed-Public" target="_blank" rel="noopener noreferrer">MuffinStore Jailed</a>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <p class="footer-brand">PancakeStore</p>
+          <p class="footer-note">This local page mirrors public project info for convenience. The official site is <a href="https://jailbreak.party/pancakestore" target="_blank" rel="noopener noreferrer">jailbreak.party/pancakestore</a>. Prefer official downloads only.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/jailbreakdotparty/PancakeStore" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/mineek/MuffinStoreJailed-Public" target="_blank" rel="noopener noreferrer">MuffinStore Jailed</a>
+          <a href="https://github.com/jailbreakdotparty/PancakeStore/releases/download/1.3.1/PancakeStore_v1.3.1.ipa">Download IPA</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="https://jailbreak.party/discord" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://jailbreak.party/" target="_blank" rel="noopener noreferrer">jailbreak.party</a>
+        </div>
+        <div class="footer-col">
+          <h4>On this page</h4>
+          <a href="#features">Features</a>
+          <a href="#install">Install</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>PancakeStore — a jailed App Store downgrader.</span>
+        <span>No jailbreak. No exploits.</span>
       </div>
     </div>
   </footer>
