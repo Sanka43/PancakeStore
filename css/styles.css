@@ -219,7 +219,7 @@ a:hover {
   animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
 }
 
-.hero h1 {
+.hero-tagline {
   margin: 0 0 0.85rem;
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 2.6vw, 1.45rem);
@@ -477,65 +477,47 @@ a:hover {
   }
 }
 
-/* Feature cards */
+/* Feature list */
 .feature-grid {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-width: 36rem;
 }
 
 .feature-card {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.5rem 1.35rem 1.35rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--maple), var(--maple-deep));
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.55rem 0.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(232, 165, 75, 0.4);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
-}
-
-.feature-card:hover::before {
-  opacity: 1;
+  background: transparent;
 }
 
 .feature-num {
+  flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--maple);
-  opacity: 0.75;
+  opacity: 0.85;
+  min-width: 1.6rem;
 }
 
 .feature-card strong {
   font-size: 1.02rem;
+  font-weight: 500;
   color: var(--text);
-}
-
-.feature-card > span:last-child {
-  color: var(--muted);
-  font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 /* Requirement + note cards */
@@ -590,6 +572,120 @@ a:hover {
   font-style: normal;
   color: var(--text);
   font-weight: 500;
+}
+
+.sideload-block {
+  margin-top: 2.25rem;
+  padding: 1.5rem 1.35rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(180deg, rgba(232, 165, 75, 0.07), transparent 42%),
+    var(--bg-alt);
+}
+
+.sideload-block h3 {
+  margin: 0 0 1.15rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.sideload-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.sideload-grid li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+a.sideload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  height: 100%;
+  padding: 1.1rem 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+a.sideload-card:hover,
+a.sideload-card:focus-visible {
+  border-color: rgba(232, 165, 75, 0.5);
+  background: rgba(232, 165, 75, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.sideload-card:visited {
+  color: var(--text);
+}
+
+.sideload-card img {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 14px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.sideload-card strong {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .sideload-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .sideload-block {
+    padding: 1.2rem 0.9rem 0.95rem;
+  }
+
+  .sideload-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  a.sideload-card {
+    padding: 0.95rem 0.55rem 0.85rem;
+  }
+
+  .sideload-card img {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 12px;
+  }
 }
 
 /* Timeline steps */
@@ -1188,7 +1284,7 @@ a:hover {
 
   .hero-icon,
   .brand,
-  .hero h1,
+  .hero-tagline,
   .lede,
   .cta-row,
   .hero-shot,
